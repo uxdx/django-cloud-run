@@ -1,0 +1,17 @@
+{% load static %}
+
+{% comment %} <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}"> {% endcomment %}
+{% if post_list %}
+<ul>
+  {% for post in post_list %}
+  <li>
+    <a href="{% url 'blog:detail' post.id %}"
+      >{{ post.post_title }}</a
+    >
+  </li>
+  {% comment %} polls 앱의 detail이란 이름의 path 를 가져와 인수로 question.id를
+  줌 {% endcomment %} {% endfor %}
+</ul>
+{% else %}
+<p>No polls are available.</p>
+{% endif %}

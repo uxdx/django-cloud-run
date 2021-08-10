@@ -1,0 +1,11 @@
+<fieldset>
+  {% comment %} Post Head {% endcomment %}
+  <legend><h1>{{ post.post_title }}</h1></legend>
+  {% if error_message %}
+  <p><strong>{{ error_message }}</strong></p>
+  {% endif %} 
+  {% comment %} Post Contents {% endcomment %}
+  <p>
+  {{ post.post_contents }}
+  </p>
+</fieldset>
